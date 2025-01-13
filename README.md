@@ -1,4 +1,7 @@
 # JMeter Assessment
+Below is the run of the Project
+
+[https://github.com/user-attachments/assets/c70cdf3d-a4a9-4201-9bbd-0facdcf1b9bd](https://github.com/user-attachments/assets/474cab9d-92e2-4950-8b80-56127fcb19a7)
 
 ## Overview
 This project contains a JMeter test plan designed to evaluate the performance and functionality of a specific API. The test plan sends HTTP requests to an API endpoint, validates responses, and processes the data as needed. The test plan includes configurations for thread groups, HTTP request samplers, and assertions.
@@ -26,6 +29,10 @@ Follow these steps to set up the test plan:
 2. Start the Test:
    - Click the green `Start` button (triangle icon) in the top toolbar.
    - Monitor test progress in the `View Results Tree` or `Summary Report` listeners.
+  
+## Explanation of Each Component and Post-Processor
+1. I've used JSON Assertions for both of the API's(GET and POST) to validate the response key-values, for response code assertion I've used Response Assertions and in POST api I've used HTTP Header Manager to send the specific key-values in HTTP request header.
+2. I've used JSON Extractor to extract user ID from the response of the POST request and store it in a variable(extracted_id) and to verify/check variable value I've used Debug Sampler. To use the extracted variable I've added JSR223 PostProcessor and print the variable you can see that in console.
 
 ## Results
 The test plan includes listeners to display results:
